@@ -207,7 +207,12 @@ const AudioTrack = () => {
         <button onClick={() => setShuffle((prevState) => !prevState)}>
           <TbArrowsShuffle style={Shuffle ? { color: "#27ae60" } : {}} />
         </button>
-        <button onClick={() => dispatch(PrevSong())}>
+        <button
+          onClick={() => {
+            dispatch(PrevSong());
+            if (isPlaying === false) dispatch(IsPlay());
+          }}
+        >
           <FaBackward />
         </button>
         {isPlaying ? (
@@ -220,7 +225,12 @@ const AudioTrack = () => {
           </button>
         )}
 
-        <button onClick={() => dispatch(NextSong())}>
+        <button
+          onClick={() => {
+            dispatch(NextSong());
+            if (isPlaying === false) dispatch(IsPlay());
+          }}
+        >
           <FaForward />
         </button>
         <button onClick={() => setRepeat((prevState) => !prevState)}>

@@ -44,17 +44,17 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 110.5%;
-  text-align: left;
+  /* text-align: left; */
   color: var(--text-color);
-  margin-left: 20px;
+  /* margin-left: 16%; */
 }
 
 .playlist-card > p {
   font-size: 12px;
   line-height: 110.5%;
   color: var(--sub-text-color);
-  text-align: left;
-  margin-left: 20px;
+  /* text-align: left;
+  margin-left: 16%; */
 }
 
 .play-playlist {

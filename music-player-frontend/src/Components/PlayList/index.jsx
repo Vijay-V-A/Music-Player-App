@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   GetPlayList,
   PlayListSongPlay,
+  IsPlay,
 } from "../../StateManagement/Reducers/MusicAppState";
 import { Link } from "react-router-dom";
 import img from "../../Assets/img.png";
@@ -12,6 +13,7 @@ const PlayList = () => {
   const dispatch = useDispatch();
 
   const playlist_ = useSelector((state) => state.Music.PlayList);
+  const isPlaying = useSelector((state) => state.Music.isPlaysong);
 
   useEffect(() => {
     dispatch(GetPlayList());
@@ -39,7 +41,10 @@ const PlayList = () => {
                   {val.song_count !== "0" && (
                     <p
                       className="play-playlist"
-                      onClick={() => dispatch(PlayListSongPlay(val.id))}
+                      onClick={() => {
+                        dispatch(PlayListSongPlay(val.id));
+                        if (isPlaying === false) dispatch(IsPlay());
+                      }}
                     >
                       Play
                     </p>
