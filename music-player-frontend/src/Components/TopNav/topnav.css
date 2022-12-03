@@ -1,0 +1,69 @@
+:root {
+  --text-color: #333333;
+  --sub-text-color: #4f4f4f;
+  --control-color: #27ae60;
+}
+
+.top-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.top-nav {
+  background-color: #ffffff;
+  /* border-bottom: 1px solid #fafafa; */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand > img {
+  width: 50px;
+  border-radius: 50%;
+  height: 50px;
+  margin-right: 12px;
+}
+.song-search-wrapper {
+  width: 40%;
+}
+.song-search {
+  border: none;
+  outline: none;
+  border-radius: 16px;
+  background-color: #f7f8f9;
+  padding: 12px 15px;
+  flex: 1;
+  color: var(--text-color);
+}
+
+.btn-login-outline,
+.btn-signup-outline {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.add-song-btn {
+  border: none;
+  outline: none;
+  background: var(--control-color) !important;
+  border-radius: 6px;
+  padding: 8px 16px;
+  color: #ffffff;
+}
+
+.add-song-icon {
+  margin-left: -100px;
+}
+
+@media (min-width: 320px) and (max-width: 1024px) {
+  .navbar-text {
+    display: none;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 425px) {
+  .song-search-wrapper {
+    display: none !important;
+  }
+}

@@ -1,0 +1,70 @@
+:root {
+  --text-color: #333333;
+  --sub-text-color: #4f4f4f;
+  --control-color: #27ae60;
+}
+
+.back-nav-wrapper {
+  width: 50px;
+  height: 50px;
+  margin: 0px 0 0 65px;
+  background-color: #828080;
+  padding: 10px;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+}
+
+.back-nav-wrapper:hover {
+  background-color: var(--control-color);
+}
+
+.back-nav {
+  font-size: 22px;
+}
+
+.songs.play {
+  width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.songs.play:hover {
+  background: none;
+  cursor: default;
+}
+
+.add-playlist-btn {
+  border: none;
+  outline: none;
+  background: var(--control-color);
+  color: #fff;
+  padding: 4px 28px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.delete-playlist-btn {
+  border: none;
+  outline: none;
+  background: red;
+  color: #fff;
+  padding: 4px 19px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.search-play {
+  flex: 1;
+  text-align: center;
+}
+.song-search.search-play-input {
+  width: 450px !important;
+  margin-right: 121px;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+}

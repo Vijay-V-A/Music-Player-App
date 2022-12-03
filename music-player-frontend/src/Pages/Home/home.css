@@ -1,0 +1,18 @@
+.playlist,
+.audiotrack,
+.tracklist {
+  flex: 1;
+  text-align: center;
+}
+
+@media (min-width: 320px) and (max-width: 426px) {
+  .tracklist {
+    display: none !important;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 1024px) {
+  .playlist {
+    display: none;
+  }
+}
