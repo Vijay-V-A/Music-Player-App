@@ -23,36 +23,46 @@ const TrackList = () => {
     <div className="track-list">
       <h2 className="tracklist-header">Track list</h2>
       <p className="next-play">Playing next</p>
-      {song_.map((val, ind) => (
-        <div
-          className="songs"
-          key={ind}
-          onClick={() => dispatch(SingleSong(ind))}
-        >
-          <div className="d-flex justify-content-between song-wrapper">
-            <div className="d-flex song-name-wrapper">
-              {val.name === song_[CurrentIndex].name && isplay ? (
-                <div className="playbar">
-                  <span />
-                  <span />
-                  <span />
+      {song_.length !== 0 ? (
+        <>
+          {song_.map((val, ind) => (
+            <div
+              className="songs"
+              key={ind}
+              onClick={() => dispatch(SingleSong(ind))}
+            >
+              <div className="d-flex justify-content-between song-wrapper">
+                <div className="d-flex song-name-wrapper">
+                  {val.name === song_[CurrentIndex].name && isplay ? (
+                    <div className="playbar">
+                      <span />
+                      <span />
+                      <span />
+                    </div>
+                  ) : (
+                    <img src={Menu} alt="" />
+                  )}
+                  <img
+                    className="track_img"
+                    src={FILE_URL + val.img_src}
+                    alt=""
+                  />
+                  <div className="d-flex flex-column song-name">
+                    <p>{val.name}</p>
+                    <p>{val.artist}</p>
+                  </div>
                 </div>
-              ) : (
-                <img src={Menu} alt="" />
-              )}
-              <img className="track_img" src={FILE_URL + val.img_src} alt="" />
-              <div className="d-flex flex-column song-name">
-                <p>{val.name}</p>
-                <p>{val.artist}</p>
+                <div className="d-flex flex-column song-duration justify-content-center">
+                  <p>{val.duration}</p>
+                  <p style={{ marginBottom: 0 }}>{val.year}</p>
+                </div>
               </div>
             </div>
-            <div className="d-flex flex-column song-duration justify-content-center">
-              <p>{val.duration}</p>
-              <p style={{ marginBottom: 0 }}>{val.year}</p>
-            </div>
-          </div>
-        </div>
-      ))}
+          ))}
+        </>
+      ) : (
+        <div>Song not found..!</div>
+      )}
     </div>
   );
 };

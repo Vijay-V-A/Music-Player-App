@@ -70,7 +70,7 @@ export function* AddSongsApi({ payload }) {
     if (payload.method === "Add") res = yield call(AddSongs_Api, payload);
     else res = yield call(DeleteSongs_Api, payload);
 
-    if (res.status === 200 && res.data == 1) {
+    if (res.status === 200 && res.data === 1) {
       yield put(SetAddPlaySong(res.data));
       if (payload.method === "Add") yield put(Refresh(1));
       else yield put(Refresh(2));
